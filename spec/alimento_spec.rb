@@ -9,5 +9,6 @@ RSpec.describe Alimento do
     it "Valor energetico correcto" do
         expect(@a.valor).to eq(2584)
         expect(@ap.valorg).to eq(618)
+        expect(@a.ir).to eq(8)
     end
 end 
