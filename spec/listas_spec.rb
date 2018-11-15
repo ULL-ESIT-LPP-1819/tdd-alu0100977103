@@ -1,5 +1,7 @@
 require "./lib/gema/listas"
 require "./spec/spec_helper"
+require "./lib/gema/alimento"
+
 RSpec.describe LinkedList do
     before :each do
         @lista = LinkedList.new
