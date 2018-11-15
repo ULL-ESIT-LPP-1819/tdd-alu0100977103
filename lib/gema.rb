@@ -1,5 +1,5 @@
 require "gema/version"
-require "gema/alimento"
+require "gema/listas"
 
 module Gema
   # Your code goes here...
