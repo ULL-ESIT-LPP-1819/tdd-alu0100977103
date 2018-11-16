@@ -17,6 +17,28 @@ RSpec.describe LinkedList do
         @lista.insert_by_end(@manzana)
         @lista.insert_by_end(@pera)
         @lista.insert_by_end(@fresa)
-        @lista.insert_by_end(@frambuesa)
     end
+    
+    it "Extraer foto comienzo" do
+        @lista.extract_by_begin()
+	end
+    
+    it "Insertar en listas alimentos al comienzo" do
+         @lista.insert_by_begin(@frambuesa)
+         @lista.insert_by_end(@platano)
+     end 
+     
+     it "Comprobando listas mayor o menor de sal" do
+         @lista_mayor=LinkedList.new
+         @lista_menor=LinkedList.new
+         if @platano.get_sal >6
+             @lista_mayor.insert_by_begin(@platano)
+         else
+             @lista_menor.insert_by_begin(@platano)
+         end 
+    end
+    
+     
+     #sudo -u postges psql
+     
 end

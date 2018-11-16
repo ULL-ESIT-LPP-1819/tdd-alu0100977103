@@ -35,4 +35,8 @@ class Alimento
         end
     end
     
+    def get_sal
+        return @sal
+    end 
+    
 end
