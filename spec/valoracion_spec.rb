@@ -11,4 +11,8 @@ RSpec.describe Valoracion do
         expect(@ind_2.IMC).to eq(1)  #Tiene obesidad
     end
     
+    it "Comprobación de clase de un objeto" do
+        expect(@ind_1.class.to_s).to eq("Valoracion")
+    end
+    
 end
