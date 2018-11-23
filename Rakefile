@@ -15,6 +15,11 @@ task :lista do
 	sh "rspec -I. spec/listas_spec.rb"
 end
 
+desc "Ejecutar clase valoración"
+task :valoracion do
+	sh "rspec -I. spec/valoracion_spec.rb"
+end
+
 desc "Ejecutar solo las pruebas simples"
 task :simple do
 	sh "rspec -I. spec/alimento_spec.rb -n /simple/"
