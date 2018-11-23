@@ -1,5 +1,5 @@
 require "gema/version"
-require "gema/listas"
+require "gema/valoracion"
 
 module Gema
   # Your code goes here...
