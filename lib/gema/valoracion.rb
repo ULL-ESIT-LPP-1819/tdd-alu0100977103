@@ -9,6 +9,10 @@ class Valoracion<Alimento
         @talla = talla
     end
     
+    def to_s
+        "#{@valor},#{@grasas},#{@sat},#{@hi},#{@az},#{@pro},#{@sal},#{ @porciones},#{@peso},#{@nombre},#{@v_consult},#{@talla}"
+    end 
+    
     def IMC
         @talla_t=@talla*@talla
         @obesidad=@peso/@talla_t
