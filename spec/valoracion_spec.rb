@@ -17,6 +17,7 @@ RSpec.describe Valoracion do
     
      it "Comprobación de superclase de un objeto" do
         expect(Valoracion.superclass).to eq(Alimento)
+        expect(Alimento.superclass).to eq(Object)
     end
     
 end
