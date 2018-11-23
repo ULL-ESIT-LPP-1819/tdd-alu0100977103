@@ -1,5 +1,7 @@
 class Valoracion<Alimento
    
+   attr_accessor :nombre, :v_consult, :talla 
+   
     def initialize(valor,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,peso,nombre,v_consult,talla)
         super(valor,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,peso)
         @nombre=nombre
