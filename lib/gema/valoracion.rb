@@ -1,4 +1,6 @@
 class Valoracion
+    
+    include Comparable
    
    attr_accessor :valor_energetico,:cnt_grasas,:cnt_grasas_sat,:hidratos_carb,:azucares,:prot,:sal,:porciones,:tam_porciones
    
@@ -17,6 +19,10 @@ class Valoracion
     def to_s
         "#{@valor_energetico},#{@cnt_grasas},#{@cnt_grasas_sat},#{@hidratos_carb},#{@azucares},#{@prot},#{@sal},#{@porciones},#{@tam_porciones}"
     end 
+    
+    def <=>(other)
+        @sal<=>other.sal
+    end
     
     def valor_energe_kj
         @kj_hidrat=@hidratos_carb*17.0
