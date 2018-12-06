@@ -38,6 +38,10 @@ RSpec.describe LinkedList do
          end 
     end
     
+    it "Enumerable" do
+        expect(@lista.max).to_eq(@et_1)
+    end
+    
      
      #sudo -u postges psql
      
