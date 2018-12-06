@@ -1,42 +1,65 @@
 class Alimento
-    attr_accessor :valor,:grasas,:sat,:hi,:su,:pro,:sal
+    attr_accessor :peso,:talla,:tri,:bi,:su,:sup,:brazo,:cintura,:cadera
+    def initialize(peso,talla,tricipital,bicipital,subescapular,suprailiaco,brazo,cintura,cadera)
+        @peso=peso
+        @talla=talla
+        @tri=tricipital
+        @bi=bicipital
+        @su=subescapular
+        @sup=suprailiaco
+        @brazo=brazo
+        @cintura=cintura
+        @cadera=cadera
+    end
     
-    def initialize(valor,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,peso)
-        @valor=valor
-        @grasas=grasas
-        @sat=saturadas
-        @hi=hidratos
-        @az=azucares
-        @pro=proteinas
-        @sal=sal
-        if @porciones!= 0
-            @porciones=porciones
-            @peso=peso
+    def to_s
+        "#{@peso},#{@talla},#{@tri},#{@bi},#{@su},#{@sup},#{@brazo},#{ @cintura},#{@cadera}"
+    end
+    
+    def IMC
+        @resultado = (@peso/(@talla*@talla))
+    end
+    
+    def plieges_cutaneos(value)
+        if value==0
+            vector=@tri
+        elsif value==1
+            vector=@bi
+        elsif value==2
+            vector=@su
+        else
+            vector=@sup
         end
-    end
-    
-    def valor
-        @v1=@hi*17.0
-        @v2=@pro*17.0
-        @v3=@grasas*37.0
-        @energia=@v1+@v2+@v3
-    end
-    
-    def valorg
-        @v1=@hi*4.0
-        @v2=@pro*4.0
-        @v3=@grasas*9.0
-        @energiag=@v1+@v2+@v3
-    end
-    
-    def ir
-        if @porciones!="nil"
-            @ir=@energia/100.0
+        
+        @suma=0
+        i=0
+        while i !=vector.length
+            @suma=@suma+vector[i]
+            i=i+1
         end
+        @suma=@suma/3.0
     end
     
-    def get_sal
-        return @sal
-    end 
+    def circunferencia(value)
+        if value==0
+            vector=@cintura
+        else
+            vector=@cadera
+        end
+        
+        @suma=0
+        i=0
+        while i !=vector.length
+            @suma=@suma+vector[i]
+            i=i+1
+        end
+        @suma=@suma/2.0
+    end
+    
+    def relacion_cc
+        @c=self.circunferencia(1)
+        @ci=self.circunferencia(0)
+        @relacion=@ci/@c
+    end
     
 end

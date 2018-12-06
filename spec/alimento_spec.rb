@@ -3,14 +3,15 @@ require "./spec/spec_helper"
 
 RSpec.describe Alimento do
     before :each do
-        @a=Alimento.new(12.0,34.0,45.0,56.0,12.0,22.0,12.0,0,0)
-        @ap=Alimento.new(10.0,30.0,40.0,50.0,10.0,20.0,10.0,8.0,200.0)
+        @individuo1=Alimento.new(50.0,40.0,[2.0,4.0,5.0],[2.0,5.0,8.0],[1.0,2.0,3.0],[1.0,5.0,6.0],[8.0,10.0],[38.0,40.0],[60.0,70.0])
     end 
     
+    it "to_s correcto" do
+        expect(@individuo1.to_s).to eq("50.0,40.0,[2.0, 4.0, 5.0],[2.0, 5.0, 8.0],[1.0, 2.0, 3.0],[1.0, 5.0, 6.0],[8.0, 10.0],[38.0, 40.0],[60.0, 70.0]")
+    end
+    
     it "Valor energetico correcto" do
-        expect(@a.valor).to eq(2584)
-        expect(@ap.valorg).to eq(550.0)
-        expect(@a.ir).to eq(25.84)
+        expect(@individuo1.IMC).to eq(0.03125)
     end
     
 end 

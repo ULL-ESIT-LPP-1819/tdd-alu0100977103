@@ -1,27 +1,43 @@
-class Valoracion<Alimento
+class Valoracion
    
-   attr_accessor :nombre, :v_consult, :talla 
+   attr_accessor :valor_energetico,:cnt_grasas,:cnt_grasas_sat,:hidratos_carb,:azucares,:prot,:sal,:porciones,:tam_porciones
    
-    def initialize(valor,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,peso,nombre,v_consult,talla)
-        super(valor,grasas,saturadas,hidratos,azucares,proteinas,sal,porciones,peso)
-        @nombre=nombre
-        @v_consult=v_consult
-        @talla = talla
+    def initialize(valor_energetico,cnt_grasas,cnt_grasas_sat,hidratos_carb,azucares,prot,sal,porcinones,tam_porciones)
+        @valor_energetico=valor_energetico
+        @cnt_grasas=cnt_grasas
+        @cnt_grasas_sat=cnt_grasas_sat
+        @hidratos_carb=hidratos_carb
+        @azucares=azucares
+        @prot=prot
+        @sal=sal
+        @porciones=porciones
+        @tam_porciones=tam_porciones
     end
     
     def to_s
-        "#{@valor},#{@grasas},#{@sat},#{@hi},#{@az},#{@pro},#{@sal},#{ @porciones},#{@peso},#{@nombre},#{@v_consult},#{@talla}"
+        "#{@valor_energetico},#{@cnt_grasas},#{@cnt_grasas_sat},#{@hidratos_carb},#{@azucares},#{@prot},#{@sal},#{@porciones},#{@tam_porciones}"
     end 
     
-    def IMC
-        @talla_t=@talla*@talla
-        @obesidad=@peso/@talla_t
-        @tratamiento=0
-        if @obesidad >=30
-            @tratamiento=1
-        else
-            @tratamiento=0
-        end
+    def valor_energe_kj
+        @kj_hidrat=@hidratos_carb*17.0
+        @kj_prot=@prot*17.0
+        @kj_grasas=@cnt_grasas*37.0
+        @kj_sat=@cnt_grasas_sat*37.0
+        @kj_energia=0.0
+        @kj_energia=@kj_energia+@kj_grasas+@kj_hidrat+@kj_prot
+    end
+    
+    def valor_energe_kcal
+        @kcal_hidrat=@hidratos_carb*4
+        @kcal_prot=@prot*4
+        @kcal_grasas=@cnt_grasas*9
+        @kcal_sat=@cnt_grasas_sat*9
+        @kcal_energia=0.0
+        @kcal_energia=@kcal_energia+@kcal_grasas+@kcal_hidrat+@kcal_prot
+    end
+    
+    def get_sal
+        return @sal 
     end
 
 end

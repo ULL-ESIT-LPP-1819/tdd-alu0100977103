@@ -1,40 +1,40 @@
 require "./lib/gema/listas"
 require "./spec/spec_helper"
-require "./lib/gema/alimento"
+require "./lib/gema/valoracion"
 
 RSpec.describe LinkedList do
     before :each do
-        @lista = LinkedList.new
-        @platano=Alimento.new(12.0,34.0,45.0,56.0,12.0,22.0,12.0,0,0)
-        @manzana=Alimento.new(10.0,30.0,40.0,50.0,10.0,20.0,10.0,8.0,200.0)
-        @pera=Alimento.new(80.0,10.0,50.0,80.0,1.0,2.0,34.0,0,0)
-        @fresa=Alimento.new(40.0,23.0,34.0,123.0,12.0,23.0,34.0,0,0)
-        @frambuesa=Alimento.new(12.0,23.0,45.0,67.0,12.0,34.0,56.0,0,0)
+         @lista = LinkedList.new
+        @et_1=Valoracion.new(20,22,11,33,6,54,61,2,92)
+        @et_2=Valoracion.new(30,32,11,43,2,54,61,0,0)
+        @et_3=Valoracion.new(30.0,42.0,11.0,33.0,3.0,54.0,61.0,0.0,0.0)
+        @et_4=Valoracion.new(40,22,11,33,4,54,71,2,89)
+        @et_5=Valoracion.new(10,22,11,33,5,54,61,2,89)
     end
     
     it "Insertar en lista los alimentos" do
-        @lista.insert_by_end(@platano)
-        @lista.insert_by_end(@manzana)
-        @lista.insert_by_end(@pera)
-        @lista.insert_by_end(@fresa)
+        @lista.insert_by_end(@et_1)
     end
     
-    it "Extraer foto comienzo" do
-        @lista.extract_by_begin()
-	end
+    it "Insertar en listas alimentos al comienzo" do
+         @lista.insert_by_begin(@et_2) #Deberia mostrarse este
+         @lista.insert_by_begin(@et_3)
+         @lista.extract_by_begin
+         puts @lista.to_s
+     end 
     
     it "Insertar en listas alimentos al comienzo" do
-         @lista.insert_by_begin(@frambuesa)
-         @lista.insert_by_end(@platano)
+         @lista.insert_by_begin(@et_4)
+         @lista.insert_by_end(@et_5)
      end 
      
      it "Comprobando listas mayor o menor de sal" do
          @lista_mayor=LinkedList.new
          @lista_menor=LinkedList.new
-         if @platano.get_sal >6
-             @lista_mayor.insert_by_begin(@platano)
+         if @et_3.get_sal >6
+             @lista_mayor.insert_by_begin(@et_3)
          else
-             @lista_menor.insert_by_begin(@platano)
+             @lista_menor.insert_by_begin(@et_3)
          end 
     end
     

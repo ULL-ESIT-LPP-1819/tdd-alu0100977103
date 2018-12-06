@@ -8,6 +8,10 @@ class LinkedList
         @tail = nil
     end
     
+    def to_s
+        "#{@head.value}"
+    end
+    
     def insert_by_end(value)
 		if @head.nil?
 			@head = @Node.new(value, nil, nil)
@@ -32,6 +36,7 @@ class LinkedList
         if @head == @tail
         		@head, @tail = nil
         else
+                @head = @head[:next]
         		@tail = @tail[:prev]
         		@tail[:next] = nil
         end
@@ -44,10 +49,6 @@ class LinkedList
 		    iterator = iterator[:next]
 			size+=1
 		end 
-    end
-    
-    def get_sal
-        super()
     end
 	
     #/? comandos
