@@ -1,0 +1,21 @@
+Thu, 06 Dec 2018 23:47:59 +0000
+./gema.gemspec	Thu, 06 Dec 2018 16:24:10 +0000
+./bin/console	Thu, 06 Dec 2018 16:24:10 +0000
+./bin/setup	Thu, 06 Dec 2018 16:24:10 +0000
+./spec/paciente_spec.rb	Thu, 06 Dec 2018 16:45:26 +0000
+./spec/valoracion_spec.rb	Thu, 06 Dec 2018 16:39:28 +0000
+./spec/spec_helper.rb	Thu, 06 Dec 2018 16:24:10 +0000
+./spec/listas_spec.rb	Thu, 06 Dec 2018 18:14:19 +0000
+./spec/alimento_spec.rb	Thu, 06 Dec 2018 16:24:10 +0000
+./spec/gema_spec.rb	Thu, 06 Dec 2018 16:24:10 +0000
+./lib/gema/valoracion.rb	Thu, 06 Dec 2018 23:44:59 +0000
+./lib/gema/listas.rb	Thu, 06 Dec 2018 23:42:24 +0000
+./lib/gema/version.rb	Thu, 06 Dec 2018 16:24:10 +0000
+./lib/gema/alimento.rb	Thu, 06 Dec 2018 23:42:26 +0000
+./lib/gema/paciente.rb	Thu, 06 Dec 2018 23:43:26 +0000
+./lib/gema.rb	Thu, 06 Dec 2018 16:24:10 +0000
+./Gemfile	Thu, 06 Dec 2018 16:24:10 +0000
+./Rakefile	Thu, 06 Dec 2018 16:24:10 +0000
+./Gemfile.lock	Thu, 06 Dec 2018 16:28:11 +0000
+./README.md	Thu, 06 Dec 2018 16:24:10 +0000
+./Guardfile	Thu, 06 Dec 2018 16:24:10 +0000
