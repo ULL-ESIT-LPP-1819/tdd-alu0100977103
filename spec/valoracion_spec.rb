@@ -1,4 +1,3 @@
-
 require "./spec/spec_helper"
 
 RSpec.describe Valoracion do
@@ -18,5 +17,9 @@ RSpec.describe Valoracion do
         expect(@et_3.valor_energe_kj).to eq(3033.0)
         expect(@et_3.valor_energe_kcal).to eq(726.0)
     end 
+    
+    it "<" do
+        expect(@et_3 < @et_4).to eq(@et_3)
+    end
     
 end
