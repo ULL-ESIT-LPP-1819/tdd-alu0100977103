@@ -53,7 +53,7 @@ RSpec.describe LinkedList do
         expect(@list.max).to eq(71)
         expect(@list.min).to eq(61)
         expect(@list.sort).to eq([61,61,61,61,71])
-        expect(@list.select{|num| num>65}).to eq([71])
+        expect(@list.select{ |num| num>65}).to eq([71])
         expect(@list.collect{|num| num=0}).to eq([0,0,0,0,0])
     end
     
