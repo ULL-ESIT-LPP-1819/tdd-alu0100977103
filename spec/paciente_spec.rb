@@ -28,4 +28,11 @@ RSpec.describe Paciente do
         expect(Alimento.superclass).to eq(Object)
     end
     
+    it "Comparable" do
+        expect(@ind_3 < @ind_4).to eq(true)
+        expect(@ind_1 > @ind_2).to eq(false)
+        expect(@ind_5.between?(@ind_1,@ind_2)).to eq(true)
+        expect([ @ind_5, @ind_1, @ind_3, @ind_2,@ind_4 ].sort).to eq([ @ind_2, @ind_1, @ind_4, @ind_5,@ind_3 ])
+    end
+    
 end 

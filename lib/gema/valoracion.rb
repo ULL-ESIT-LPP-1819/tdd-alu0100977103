@@ -1,4 +1,4 @@
-class Valoracion
+class Valoracion #Etiquetas
     
     include Comparable
    
