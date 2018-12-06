@@ -1,9 +1,17 @@
 class Paciente<Alimento
     
+    include Comparable
+    
+    attr_accessor :nombre,:v_consult
+    
     def initialize(peso,talla,tricipital,bicipital,subescapular,suprailiaco,brazo,cintura,cadera,nombre,v_consult)
         super(peso,talla,tricipital,bicipital,subescapular,suprailiaco,brazo,cintura,cadera)
         @nombre=nombre
         @v_consult=v_consult
+    end
+    
+    def <=>(other)
+        @peso<=>other.peso
     end
     
     def to_s
