@@ -4,20 +4,24 @@ class Paciente<Alimento
     
     attr_accessor :nombre,:v_consult
     
+    #Constructor de Paciente
     def initialize(peso,talla,tricipital,bicipital,subescapular,suprailiaco,brazo,cintura,cadera,nombre,v_consult)
         super(peso,talla,tricipital,bicipital,subescapular,suprailiaco,brazo,cintura,cadera)
         @nombre=nombre
         @v_consult=v_consult
     end
     
+    #Comparable de peso de un Paciente
     def <=>(other)
         @peso<=>other.peso
     end
-    
+
+    #Mostrar datos de Paciente
     def to_s
         "#{@peso},#{@talla},#{@tri},#{@bi},#{@su},#{@sup},#{@brazo},#{ @cintura},#{@cadera},#{@nombre},#{@v_consult}"
     end
     
+    #Calcular IMC
     def IMC
         @talla_t=@talla*@talla
         @obesidad=@peso/@talla_t

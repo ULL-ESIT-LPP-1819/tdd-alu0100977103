@@ -1,17 +1,48 @@
+#Clase que genera listas doblemente enlazadas
 class LinkedList
+    
+    include Enumerable
     
     attr_accessor :Node
     
+    #Constructor de una lista doblemente enlazada
     def initialize
         @Node = Struct.new(:value, :next, :prev)
 		@head = nil
         @tail = nil
     end
     
+    #Ver que valores vas a comparar de la lista
+    def what(v)
+        @v=v
+    end
+    
+    #Mostrar los valores de la cabeza de la lista
     def to_s
         "#{@head.value}"
     end
     
+    #Sirve para recorrer la lista, enumerable
+    def each 
+        iterator = @head
+		while !iterator.nil?
+		    if @v==0
+		        yield iterator[:value].sal
+		    else
+		        yield iterator[:value].peso
+		    end
+			iterator = iterator[:next]
+		end
+    end
+    
+    #Insertar varios elementos
+    def insert_set(others)
+	    for i in (0.. others.size-1)
+	        insert_by_end(others[i])
+	    end
+	end
+    
+    #Insertar al final de la lista un objeto
     def insert_by_end(value)
 		if @head.nil?
 			@head = @Node.new(value, nil, nil)
@@ -22,6 +53,7 @@ class LinkedList
 		end
     end
     
+    #Insertar al comienzo de la lista
     def insert_by_begin(value)
 		if @head.nil?
 			@head = @Node.new(value, nil, nil)
@@ -32,6 +64,7 @@ class LinkedList
 		end
     end
     
+    #Extraer al comienzo de la lista
     def extract_by_begin()
         if @head == @tail
         		@head, @tail = nil
@@ -42,6 +75,7 @@ class LinkedList
         end
     end
     
+    #Tamaño
     def size
         size = 0
 		iterator = @head
