@@ -53,6 +53,46 @@ RSpec.describe Valoracion do
         expect(@ind_4.gasto_total).to eq(699.46)
         expect(@ind_5.gasto_total).to eq(323.60499999999996)
     end
+    
+    it "Menú dietético 1 para el paciente 4" do
+            calorias_menu = @menu.map{ |i| i.valor_energe_kj}
+            total_calorias = calorias_menu.reduce(:+)
+            gasto_energetico = @ind_4.gasto_total
+            gasto_energetico = gasto_energetico * 0.10
+            expect(total_calorias >= gasto_energetico).to eq(true)
+    end
+    
+    it "Menú dietético 2 para el paciente 5" do
+            calorias_menu = @menu2.map{ |i| i.valor_energe_kj}
+            total_calorias = calorias_menu.reduce(:+)
+            gasto_energetico = @ind_5.gasto_total
+            gasto_energetico = gasto_energetico * 0.10
+            expect(total_calorias >= gasto_energetico).to eq(true)
+    end
+    
+    it "Menú dietético 3 para el paciente 3" do
+            calorias_menu = @menu3.map{ |i| i.valor_energe_kj}
+            total_calorias = calorias_menu.reduce(:+)
+            gasto_energetico = @ind_3.gasto_total
+            gasto_energetico = gasto_energetico * 0.10
+            expect(total_calorias >= gasto_energetico).to eq(true)
+    end
+    
+    it "Menú dietético 4 para el paciente 2" do
+            calorias_menu = @menu4.map{ |i| i.valor_energe_kj}
+            total_calorias = calorias_menu.reduce(:+)
+            gasto_energetico = @ind_2.gasto_total
+            gasto_energetico = gasto_energetico * 0.10
+            expect(total_calorias >= gasto_energetico).to eq(true)
+    end
+    
+    it "Menú dietético 5 para el paciente 1" do
+            calorias_menu = @menu5.map{ |i| i.valor_energe_kj}
+            total_calorias = calorias_menu.reduce(:+)
+            gasto_energetico = @ind_1.gasto_total
+            gasto_energetico = gasto_energetico * 0.10
+            expect(total_calorias >= gasto_energetico).to eq(true)
+    end
 
     it "To_s correcto" do
         expect(@et_3.to_s).to eq("30.0,42.0,11.0,33.0,3.0,54.0,61.0,,0.0")
