@@ -22,6 +22,50 @@ class LinkedList
         "#{@head.value}"
     end
     
+    def sort_for
+        tmp = map{|x| x.gasto_total}
+        orden = []
+        orden.push(tmp[0])
+    
+        for i in (1..length-1)
+            for j in (0..i)
+                if(orden[j] >= tmp[i])
+                    orden.insert(j,tmp[i])
+                break
+                elsif(orden[orden.length - 1] <= tmp[i])
+                    orden.push(tmp[i])
+                break
+                end
+            end
+        end
+    
+        orden
+    end
+    
+    def sort_each
+        tmp = map{ |x| x.gasto_total}
+        i = 0
+        tmp.each do |x|
+        a = x
+        i1 = i
+        j = i1 + 1
+    
+            tmp[j..tmp.length - 1].each do |y|
+                if (a > y)
+                    a = y
+                    i1 = j
+                end
+                j+=1
+            end
+    
+            tmp[i1] = x
+            tmp[i] = a
+            i+=1
+        end
+    
+            tmp
+    end
+    
     #Sirve para recorrer la lista, enumerable
     def each(&block)
         node = @Node.new(nil,nil,nil)
@@ -47,7 +91,7 @@ class LinkedList
     
     #Insertar varios elementos
     def insert_set(others)
-	    for i in (0.. others.size-1)
+	    for i in (0.. others.length-1)
 	        insert_by_end(others[i])
 	    end
 	end
@@ -86,13 +130,16 @@ class LinkedList
     end
     
     #Tamaño
-    def size
+    def length
         size = 0
-		iterator = @head
-		while (!iterator.nil?)
-		    iterator = iterator[:next]
-			size+=1
-		end 
+        node = @head
+
+        while !(node.nil?)
+            size = size + 1
+            node = node.next
+        end
+
+        size
     end
 	
     #/? comandos
