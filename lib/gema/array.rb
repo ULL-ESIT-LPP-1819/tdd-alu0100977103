@@ -1,5 +1,6 @@
 class Array
-
+    require 'benchmark'
+    puts Benchmark.measure { "a"*1_0_00_000 }
     def sort_for
   
         tmp = map{|x| x.reduce(:+)}

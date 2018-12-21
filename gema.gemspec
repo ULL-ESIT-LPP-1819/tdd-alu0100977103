@@ -3,6 +3,7 @@ lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "gema/version"
 
+
 Gem::Specification.new do |spec|
   spec.name          = "gema"
   spec.version       = Gema::VERSION
@@ -12,6 +13,8 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Practica 6}
   spec.description   = %q{Alimentos envasados}
   spec.homepage      = "https://github.com/ULL-ESIT-LPP-1819/tdd-alu0100977103"
+  
+  spec.add_development_dependency "coveralls"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
