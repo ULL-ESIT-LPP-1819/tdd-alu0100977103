@@ -17,6 +17,10 @@ class Valoracion #Etiquetas
         @porciones=porciones
         @tam_porciones=tam_porciones
     end
+
+    def + (other)
+        valor_energe_kcal + other.valor_energe_kcal
+    end
     
     #Mostrar datos de una etiqueta
     def to_s

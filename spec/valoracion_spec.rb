@@ -58,9 +58,9 @@ RSpec.describe Valoracion do
     end
 
     it "Se ordena un array de menús con for, each y sort correctamente" do
-            expect(@menu_array.sort_each).to eq([421.8, 421.8, 427.8, 427.8, 588.5, 588.5, 948.3, 948.3, 948.3, 948.3])
-            expect(@menu_array.sort_for).to eq([421.8, 421.8, 427.8, 427.8, 588.5, 588.5, 948.3, 948.3, 948.3, 948.3])
-            expect(@menu_array.map{ |x| x.reduce(:+)}.sort).to eq([421.8, 421.8, 427.8, 427.8, 588.5, 588.5, 948.3, 948.3, 948.3, 948.3])
+            expect(@menu_array.sort_each).to eq([1092.0, 1092.0, 1222.0, 1222.0, 1222.0, 1222.0, 1272.0, 1272.0, 1272.0, 1272.0])
+            expect(@menu_array.sort_for).to eq([1092.0, 1092.0, 1222.0, 1222.0, 1222.0, 1222.0, 1272.0, 1272.0, 1272.0, 1272.0])
+            expect(@menu_array.map{ |x| x.reduce(:+)}.sort).to eq([1092.0, 1092.0, 1222.0, 1222.0, 1222.0, 1222.0, 1272.0, 1272.0, 1272.0, 1272.0])
     end
 
     it "Gasto energetico total calculo" do
