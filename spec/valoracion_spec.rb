@@ -57,6 +57,12 @@ RSpec.describe Valoracion do
         expect(@paciente_list.map{ |x| x.gasto_total}.sort ).to eq([228.75, 228.75, 244.75, 244.75, 323.60499999999996, 323.60499999999996, 488.405, 488.405, 699.46, 699.46])
     end
 
+    it "Se ordena un array de menús con for, each y sort correctamente" do
+            expect(@menu_array.sort_each).to eq([421.8, 421.8, 427.8, 427.8, 588.5, 588.5, 948.3, 948.3, 948.3, 948.3])
+            expect(@menu_array.sort_for).to eq([421.8, 421.8, 427.8, 427.8, 588.5, 588.5, 948.3, 948.3, 948.3, 948.3])
+            expect(@menu_array.map{ |x| x.reduce(:+)}.sort).to eq([421.8, 421.8, 427.8, 427.8, 588.5, 588.5, 948.3, 948.3, 948.3, 948.3])
+    end
+
     it "Gasto energetico total calculo" do
         expect(@ind_1.gasto_energetico).to eq(222.5)
         expect(@ind_2.gasto_energetico).to eq(187.5)
