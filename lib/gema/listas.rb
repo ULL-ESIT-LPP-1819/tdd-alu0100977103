@@ -23,21 +23,20 @@ class LinkedList
     end
     
     #Sirve para recorrer la lista, enumerable
-    def each 
-        iterator = @head
-		while !iterator.nil?
-		    if @v==0
-		        yield iterator[:value].sal
-		    else
-		        yield iterator[:value].peso
-		    end
-			iterator = iterator[:next]
-		end
+    def each(&block)
+        node = @Node.new(nil,nil,nil)
+        node = @head
+
+        while !(node.nil?)
+            yield node.value
+
+        node = node.next
+        end
     end
     
     def insert_val(value)
 
-        node = Node.new(value, nil, @tail)
+        node = @Node.new(value, nil, @tail)
 
         @head = node if @head.nil?
         @tail.next = node unless @tail.nil?

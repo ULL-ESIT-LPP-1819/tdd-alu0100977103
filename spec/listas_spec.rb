@@ -49,21 +49,22 @@ RSpec.describe LinkedList do
          end 
     end
     
-    it "Enumerable con etiquetas" do
-        expect(@list.max).to eq(71)
-        expect(@list.min).to eq(61)
-        expect(@list.sort).to eq([61,61,61,61,71])
-        expect(@list.select{ |num| num>65}).to eq([71])
-        expect(@list.collect{|num| num=0}).to eq([0,0,0,0,0])
-    end
+    #it "Enumerable con etiquetas" do
+    #    expect(@list.max).to eq(71)
+    #    expect(@list.min).to eq(61)
+    #    expect(@list.sort).to eq([61,61,61,61,71])
+    #    expect(@list.select{ |num| num>65}).to eq([71])
+    #   expect(@list.collect{|num| num=0}).to eq([0,0,0,0,0])
+    #end
     
-    it "Enumerable con indiividuos" do
-        expect(@list_ind.max).to eq(1020)
-        expect(@list_ind.min).to eq(10)
-        expect(@list_ind.sort).to eq([10, 10, 30, 40, 1020])
-        expect(@list_ind.select{|num| num>65}).to eq([1020])
-        expect(@list_ind.collect{|num| num=0}).to eq([0,0,0,0,0])
-    end
+    
+    #it "Enumerable con indiividuos" do
+    #    expect(@list_ind.max).to eq(1020)
+    #    expect(@list_ind.min).to eq(10)
+    #    expect(@list_ind.sort).to eq([10, 10, 30, 40, 1020])
+    #    expect(@list_ind.select{|num| num>65}).to eq([1020])
+    #    expect(@list_ind.collect{|num| num=0}).to eq([0,0,0,0,0])
+    #end
     
      
      #sudo -u postges psql
