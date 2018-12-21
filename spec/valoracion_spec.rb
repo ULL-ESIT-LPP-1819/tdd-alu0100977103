@@ -14,11 +14,40 @@ RSpec.describe Valoracion do
         @ind_4=Paciente.new(50.0,50.0,40.0,50.0,10.0,20.0,10.0,8.0,45.0,"Luis",1,1,45,0.54)
         @ind_5=Paciente.new(43.0,17.0,32.0,50.0,10.0,20.0,10.0,8.0,60.0,"Daniel",1,1,22,0.12)
         
-        @menu=[@et_1,@et_2]
-        @menu2=[@et_2,@et_3]
-        @menu3=[@et_3,@et_4]
-        @menu4=[@et_4,@et_5]
-        @menu5=[@et_5,@et_1]
+            @menu = LinkedList.new
+            @menu.insert_val(@et_2)
+            @menu.insert_val(@et_4)
+ 
+            @menu2 = LinkedList.new
+            @menu2.insert_val(@et_3)
+            @menu2.insert_val(@et_5)
+ 
+            @menu3 = LinkedList.new
+            @menu3.insert_val(@et_1)
+            @menu3.insert_val(@et_2)
+ 
+            @menu4 = LinkedList.new
+            @menu4.insert_val(@et_5)
+            @menu4.insert_val(@et_1)
+ 
+            @menu5 = LinkedList.new
+            @menu5.insert_val(@et_3)
+            @menu5.insert_val(@et_4)
+ 
+            @menu_array = [@menu, @menu2, @menu3, @menu4, @menu5, @menu, @menu2, @menu3, @menu4, @menu5]
+            
+            @paciente_list = LinkedList.new
+
+            @paciente_list.insert_val(@ind_1)
+            @paciente_list.insert_val(@ind_2)
+            @paciente_list.insert_val(@ind_3)
+            @paciente_list.insert_val(@ind_4)
+            @paciente_list.insert_val(@ind_5)
+            @paciente_list.insert_val(@ind_)
+            @paciente_list.insert_val(@ind_2)
+            @paciente_list.insert_val(@ind_3)
+            @paciente_list.insert_val(@ind_4)
+            @paciente_list.insert_val(@ind_5)
         
     end 
 

@@ -35,6 +35,17 @@ class LinkedList
 		end
     end
     
+    def insert_val(value)
+
+        node = Node.new(value, nil, @tail)
+
+        @head = node if @head.nil?
+        @tail.next = node unless @tail.nil?
+
+        @tail = node
+
+    end
+    
     #Insertar varios elementos
     def insert_set(others)
 	    for i in (0.. others.size-1)
